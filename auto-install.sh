@@ -24,7 +24,7 @@ echo "Wiping target $DRIVE"
 
 wipefs --all "$DRIVE"
 
-printf "n\n\n\n+1G\nt\n1\nn\n\n\n+4G\nt\n\n19\nn\n\n\n\nt\n\n23" | fdisk "$DRIVE"
+printf "(echo n; echo; echo; echo; echo +1G; echo t; echo ef; echo n; echo; echo; echo; echo +4G; echo t; echo; echo 82; echo n; echo; echo; echo; echo; echo t; echo; echo 83; echo w;)" | fdisk "$DRIVE"
 
 # Create partitions
 echo "Creating partitions on $DRIVE"
